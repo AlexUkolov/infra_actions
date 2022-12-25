@@ -38,13 +38,13 @@ jobs:
         # запустить написанные разработчиком тесты
         python manage.py test
 
-  # build:
-  #   runs-on: ubuntu-latest
-  #   needs: tests
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - run: docker build -t alexukolov/test_infra_project .
-  #   - run: docker login
+  build:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+    - uses: actions/checkout@v2
+    - run: docker build -t alexukolov/test_infra_project .
+    - run: docker login
 
   build_and_push_to_docker_hub:
     name: Push Docker image To Docker Hub
