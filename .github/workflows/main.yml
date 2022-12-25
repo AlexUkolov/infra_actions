@@ -39,8 +39,10 @@ jobs:
         python manage.py test
 
   build:
-    name: Build Image from Dockerfile
-    run: docker build -t alexukolov/test_infra_project
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build Image from Dockerfile
+      run: docker build -t alexukolov/test_infra_project
 
 
   # build_and_push_to_docker_hub:
