@@ -55,14 +55,14 @@ jobs:
         with:
           username: alexukolov 
           password: gjzOu6XKcM8aZbiV3exK
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v1
-        with:
-          images: alexukolov/test_infra_project
+      # - name: Extract metadata (tags, labels) for Docker
+      #   id: meta
+      #   uses: docker/metadata-action@v1
+      #   with:
+      #     images: alexukolov/test_infra_project
       - name: Push to Docker Hub
         # Пуш образа в Docker Hub 
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: alex_ukolov/test_infra_project:latest
+          tags: alexukolov/test_infra_project:latest
